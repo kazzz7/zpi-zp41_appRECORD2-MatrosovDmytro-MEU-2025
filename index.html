@@ -17,6 +17,7 @@
       <img src="images/photo.jpg" alt="Матросов Дмитро" />
     </div>
   </header>
+  
   <nav class="lab-nav container">
     <ul>
       <li><a href="lr4.html">Лабораторна робота 4</a></li>
@@ -24,6 +25,7 @@
       <li><a href="lr6.html">Лабораторна робота 6</a></li>
     </ul>
   </nav>
+  
 
   <div class="report-content container">
     <!-- ЛІВАЯ ПАНЕЛЬ -->
@@ -77,16 +79,18 @@
   <script>
     const btns = document.querySelectorAll('.nav-btn');
     const panes = document.querySelectorAll('.content-pane');
-    btns.forEach(btn => {
+    btns.forEach(btn =>
       btn.addEventListener('click', () => {
         btns.forEach(b => b.classList.remove('active'));
         panes.forEach(p => p.classList.remove('active'));
         btn.classList.add('active');
-        document.getElementById(btn.dataset.section)
-                .classList.add('active');
-      });
-    });
+        document
+          .getElementById(btn.dataset.section)
+          .classList.add('active');
+      })
+    );
   </script>
+  
   
 </body>
 </html>

@@ -1,61 +1,73 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ЛР 4 | Основи програмування | Матросов Дмитро</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/styles.css"/>
 </head>
 <body>
-  <!-- Header & Tabs -->
-  <header class="site-header">
-    <div class="header-banner">
-      <h1>Лабораторна робота 4</h1>
-      <p>КЛАСИ. DOM. ПОДІЇ. ОБ'ЄКТ ПОДІЇ. ДЕЛЕГУВАННЯ ПОДІЙ</p>
+  <!-- Report Header -->
+  <header class="report-header container">
+    <div class="report-title">
+      <h1>Звіт з лабораторних робіт</h1>
+      <h2>з дисципліни "Основи клієнтської розробки"</h2>
+      <p>Студент групи ЗПІ-ЗП41 Матросов Дмитро</p>
     </div>
-    <nav class="lab-tabs container">
-      <a href="index.html" class="tab">Головна</a>
-      <a href="lr4.html" class="tab active">ЛР 4</a>
-      <a href="lr5.html" class="tab">ЛР 5</a>
-      <a href="lr6.html" class="tab">ЛР 6</a>
-    </nav>
+    <div class="report-photo">
+      <img src="images/photo.jpg" alt="Матросов Дмитро"/>
+    </div>
   </header>
 
-  <main class="container">
-    <!-- Мета -->
-    <section>
-      <h2>Мета роботи</h2>
-      <p>Отримати практичні навички роботи з DOM-подіями, об’єктом події та динамічною зміною розмітки за допомогою JavaScript.</p>
-    </section>
+  <!-- Lab Navigation -->
+  <nav class="lab-nav container">
+    <ul>
+      <li><a href="lr4.html" class="active">Лабораторна робота 4</a></li>
+      <li><a href="lr5.html">Лабораторна робота 5</a></li>
+      <li><a href="lr6.html">Лабораторна робота 6</a></li>
+    </ul>
+  </nav>
 
-    <!-- Завдання -->
-    <section>
-      <h2>Завдання для варіанту 13</h2>
-      <p>Усі студенти з <strong>непарним</strong> номером за списком групи виконують варіанти <em>1, 3, 5, 7, 8, 9, 10</em>; ваш варіант — <strong>13</strong> (непарний) :contentReference[oaicite:1]{index=1}.</p>
-      <table class="tasks-table">
-        <thead>
-          <tr><th>№ варіанта</th><th>Завдання</th><th>Групи</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>13</td>
-            <td>
-              Створити поле вводу та кнопку.  
-              Кнопка «Приховати» ховає текст у полі, замінюючи його на зірочки, та змінює свою назву на «Розкрити».  
-              При повторному натисканні текст знову відображається, а кнопка повертає назву «Приховати».
-            </td>
-            <td>непарні</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Theme/Tasks Sidebar -->
+    <div class="report-content container">
+      <aside class="sidebar">
+        <button class="nav-btn active" data-section="theme">
+          Тема. Мета. Місце розташування сайту та звіту
+        </button>
+        <button class="nav-btn" data-section="tasks">Завдання</button>
+      </aside>
+
+      <section class="main-section">
+        <!-- Theme / Meta / Links -->
+        <article id="theme" class="content-pane active">
+          <h3>ТЕМА:</h3>
+          <p>КЛАСИ. ОБ'ЄКТНА МОДЕЛЬ ДОКУМЕНТА (DOM). ПОДІЇ. ОБ'ЄКТ ПОДІЇ. ДЕЛЕГУВАННЯ ПОДІЙ</p>
+          <h3>МЕТА:</h3>
+          <p>Придбати практичні навички роботи з об'єктами. Методи об'єкта. Callback. Стрілочні функції як колбеки. Реалізація програм засобами мови JavaScript.</p>
+          <h3>ПОСИЛАННЯ:</h3>
+          <ul>
+            <li><a href="https://github.com/kazzz7/zpi-zp41_appRECORD2-MatrosovDmytro-MEU-2025">Репозиторій звітного HTML-документа</a></li>
+            <li><a href="https://kazzz7.github.io/zpi-zp41_appRECORD2-MatrosovDmytro-MEU-2025/">Жива сторінка звітного HTML-документа</a></li>
+          </ul>
+        </article>
+        <!-- Task Description -->
+        <article id="tasks" class="content-pane">
+          <h3>ЗАВДАННЯ ДЛЯ ВАРІАНТУ 13:</h3>
+          <p>Створити поле вводу та кнопку.<br>
+          Кнопка «Приховати» ховає текст у полі, замінюючи його на зірочки, та змінює свою назву на «Розкрити».<br>
+          При повторному натисканні текст знову відображається, а кнопка повертає назву «Приховати».</p>
+        </article>
+      </section>
+    </div>
 
     <!-- Реалізація -->
     <section>
       <h2>Реалізація</h2>
       <div class="task-block">
         <label for="secret-input">Ваш текст:</label>
-        <input id="secret-input" type="text" placeholder="Введіть щось…" />
+        <input id="secret-input" type="text" placeholder="Введіть щось…"/>
         <button id="toggle-btn">Приховати</button>
       </div>
     </section>
@@ -82,10 +94,10 @@ btn.addEventListener('click', () => {
       </code></pre>
     </section>
 
-    <!-- Демоверсія -->
+    <!-- Демонстрація -->
     <section>
       <h2>Демонстрація</h2>
-      <img src="images/lr4-demo.gif" alt="Demo ЛР4" />
+      <img src="images/lr4-demo.gif" alt="Demo ЛР4"/>
     </section>
   </main>
 
@@ -95,6 +107,17 @@ btn.addEventListener('click', () => {
     </div>
   </footer>
 
+  <!-- Ваш скрипт та скрипт перемикання -->
   <script src="js/lr4.js"></script>
+  <script>
+    const btns = document.querySelectorAll('.nav-btn');
+    const panes = document.querySelectorAll('.content-pane');
+    btns.forEach(btn => btn.addEventListener('click', () => {
+      btns.forEach(b => b.classList.remove('active'));
+      panes.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.section).classList.add('active');
+    }));
+  </script>
 </body>
 </html>
