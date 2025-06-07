@@ -7,37 +7,86 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <h1>Курс «Основи програмування»</h1>
-      <nav class="main-nav">
-        <ul>
-          <li><a href="index.html">Головна</a></li>
-          <li><a href="lr4.html">ЛР 4</a></li>
-          <li><a href="lr5.html">ЛР 5</a></li>
-          <li><a href="lr6.html">ЛР 6</a></li>
-        </ul>
-      </nav>
+  <header class="report-header container">
+    <div class="report-title">
+      <h1>Звіт з лабораторних робіт</h1>
+      <h2>з дисципліни "Основи клієнтської розробки"</h2>
+      <p>Студент групи ЗПІ-ЗП41 Матросов Дмитро</p>
+    </div>
+    <div class="report-photo">
+      <img src="images/photo.jpg" alt="Матросов Дмитро" />
     </div>
   </header>
-
-  <main class="container">
-    <section class="intro">
-      <h2>Привіт!</h2>
-      <p>Цей репозиторій містить три лабораторні роботи з курсу «Основи програмування», виконані студентом Матросовим Дмитром.</p>
-      <ul>
-        <li><strong>ЛР 4</strong> — приховування/розкриття тексту</li>
-        <li><strong>ЛР 5</strong> — галерея + форма зберігання Web Storage</li>
-        <li><strong>ЛР 6</strong> — таймер, генератор промісів, пошук зображень</li>
-      </ul>
-      <p>Використовуйте меню вище для переходу до потрібної роботи.</p>
+  <nav class="lab-nav container">
+    <ul>
+      <li><a href="lr4.html">Лабораторна робота 4</a></li>
+      <li><a href="lr5.html">Лабораторна робота 5</a></li>
+      <li><a href="lr6.html">Лабораторна робота 6</a></li>
+    </ul>
+  </nav>
+  
+  <div class="report-content container">
+    <!-- ЛІВАЯ ПАНЕЛЬ -->
+    <aside class="sidebar">
+      <button class="nav-btn active" data-section="theme">
+        Тема. Мета. Місце розташування сайту та звіту
+      </button>
+      <button class="nav-btn" data-section="tasks">
+        Завдання
+      </button>
+    </aside>
+  
+    <!-- ПРАВАЯ ПАНЕЛЬ -->
+    <section class="main-section">
+      <article id="theme" class="content-pane active">
+        <h3>ТЕМА:</h3>
+        <p>КЛАСИ. ОБ'ЄКТНА МОДЕЛЬ ДОКУМЕНТА (DOM). ПОДІЇ. ОБ'ЄКТ ПОДІЇ. ДЕЛЕГУВАННЯ ПОДІЙ.</p>
+  
+        <h3>МЕТА:</h3>
+        <p>Придбати практичні навички роботи з об'єктами. Методи об'єкта. Callback. Стрілочні функції як колбеки.</p>
+  
+        <h3>ПОСИЛАННЯ:</h3>
+        <ul>
+          <li>
+            <a href="https://github.com/kazzz7/zpi-zp41_appRECORD2-MatrosovDmytro-MEU-2025">
+              Репозиторій звітного HTML-документа
+            </a>
+          </li>
+          <li>
+            <a href="https://kazzz7.github.io/zpi-zp41_appRECORD2-MatrosovDmytro-MEU-2025/">
+              Жива сторінка звітного HTML-документа
+            </a>
+          </li>
+        </ul>
+      </article>
+  
+      <article id="tasks" class="content-pane">
+        <h3>ЗАВДАННЯ ДЛЯ ВАРІАНТУ 13</h3>
+        <p>Створити поле вводу та кнопку...</p>
+        <!-- встав сюди текст завдання варіанту 13 -->
+      </article>
     </section>
-  </main>
+  </div>
+  
 
   <footer class="site-footer">
     <div class="container">
       <p>© 2025 Матросов Дмитро (ZPI-ZP41) — Основи програмування</p>
     </div>
   </footer>
+  <script>
+    const btns = document.querySelectorAll('.nav-btn');
+    const panes = document.querySelectorAll('.content-pane');
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btns.forEach(b => b.classList.remove('active'));
+        panes.forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.section)
+                .classList.add('active');
+      });
+    });
+  </script>
+  
 </body>
 </html>
