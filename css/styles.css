@@ -1,0 +1,71 @@
+/* Базові скидання */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* Контейнер */
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+/* Хедер */
+.site-header {
+  background: #004a99;
+  color: #fff;
+  padding: 1rem 0;
+}
+.site-header h1 {
+  font-size: 1.8rem;
+}
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.main-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Основний контент */
+.intro h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.intro p {
+  margin-bottom: 1rem;
+}
+.intro ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+.intro li {
+  margin-bottom: 0.5rem;
+}
+
+/* Футер */
+.site-footer {
+  background: #222;
+  color: #aaa;
+  text-align: center;
+  padding: 0.75rem 0;
+  margin-top: 2rem;
+}
+.site-footer p {
+  font-size: 0.9rem;
+}
