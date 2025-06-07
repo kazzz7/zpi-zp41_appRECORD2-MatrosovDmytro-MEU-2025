@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ЛР 6 | Основи програмування | Матросов Дмитро</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplelightbox/dist/simple-lightbox.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izitoast/dist/css/iziToast.min.css"/>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-banner">
+      <h1>Лабораторна робота 6</h1>
+      <p>АСИНХРОННІСТЬ. ПРОМІСИ. REST API. AJAX</p>
+    </div>
+    <nav class="lab-tabs container">
+      <a href="index.html" class="tab">Головна</a>
+      <a href="lr4.html" class="tab">ЛР 4</a>
+      <a href="lr5.html" class="tab">ЛР 5</a>
+      <a href="lr6.html" class="tab active">ЛР 6</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Таймер -->
+    <section>
+      <h2>Завдання 1: Таймер зворотного відліку</h2>
+      <input type="text" id="datetime-picker" placeholder="Виберіть дату"/>
+      <button type="button" data-start>Start</button>
+      <div class="timer">
+        <div class="field"><span class="value" data-days>00</span><span class="label">Days</span></div>
+        <div class="field"><span class="value" data-hours>00</span><span class="label">Hours</span></div>
+        <div class="field"><span class="value" data-minutes>00</span><span class="label">Minutes</span></div>
+        <div class="field"><span class="value" data-seconds>00</span><span class="label">Seconds</span></div>
+      </div>
+      <img src="images/lr6-countdown-demo.gif" alt="Countdown Demo" />
+    </section>
+
+    <!-- Генератор промісів -->
+    <section>
+      <h2>Завдання 2: Генератор промісів</h2>
+      <form class="promise-form">
+        <label>Delay (ms)<input type="number" name="delay" required/></label>
+        <fieldset>
+          <legend>State</legend>
+          <label><input type="radio" name="state" value="fulfilled" required/> Fulfilled</label>
+          <label><input type="radio" name="state" value="rejected" required/> Rejected</label>
+        </fieldset>
+        <button type="submit">Create notification</button>
+      </form>
+      <img src="images/lr6-promise-demo.gif" alt="Promise Demo" />
+    </section>
+
+    <!-- Пошук зображень -->
+    <section>
+      <h2>Завдання 3: Пошук зображень по Pixabay API</h2>
+      <form class="search-form">
+        <input type="text" name="query" placeholder="Пошуковий запит…" required/>
+        <button type="submit">Search</button>
+      </form>
+      <div class="gallery"></div>
+      <img src="images/lr6-pixabay-demo.gif" alt="Pixabay Demo" />
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Матросов Дмитро (ZPI-ZP41) — Основи програмування</p>
+    </div>
+  </footer>
+
+  <!-- Бібліотеки -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/simplelightbox/dist/simple-lightbox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/izitoast/dist/js/iziToast.min.js"></script>
+  <!-- Ваші скрипти -->
+  <script src="js/lr6/countdown.js"></script>
+  <script src="js/lr6/promiseGenerator.js"></script>
+  <script src="js/lr6/pixabaySearch.js"></script>
+</body>
+</html>

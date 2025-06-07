@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ЛР 5 | Основи програмування | Матросов Дмитро</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- basicLightbox CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.css"/>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-banner">
+      <h1>Лабораторна робота 5</h1>
+      <p>WEB-СХОВИЩЕ. Web Storage API. МОДАЛЬНЕ ВІКНО</p>
+    </div>
+    <nav class="lab-tabs container">
+      <a href="index.html" class="tab">Головна</a>
+      <a href="lr4.html" class="tab">ЛР 4</a>
+      <a href="lr5.html" class="tab active">ЛР 5</a>
+      <a href="lr6.html" class="tab">ЛР 6</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>Мета</h2>
+      <p>Отримати навички створення динамічної галереї та форми збереження стану через Web Storage API.</p>
+    </section>
+
+    <section>
+      <h2>Галерея з basicLightbox</h2>
+      <ul class="gallery"></ul>
+    </section>
+
+    <section>
+      <h2>Форма зворотного зв’язку</h2>
+      <form class="feedback-form" autocomplete="off">
+        <label>
+          Email
+          <input type="email" name="email" required />
+        </label>
+        <label>
+          Повідомлення
+          <textarea name="message" rows="5" required></textarea>
+        </label>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Демонстрація</h2>
+      <img src="images/lr5-gallery-demo.gif" alt="Gallery Demo" />
+      <img src="images/lr5-form-demo.gif"  alt="Form Demo" />
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Матросов Дмитро (ZPI-ZP41) — Основи програмування</p>
+    </div>
+  </footer>
+
+  <!-- basicLightbox JS -->
+  <script src="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.js"></script>
+  <script src="js/lr5.js"></script>
+</body>
+</html>
