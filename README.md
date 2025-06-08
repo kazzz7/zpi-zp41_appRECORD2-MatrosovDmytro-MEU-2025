@@ -18,7 +18,4 @@
 - `images/` — результати виконання у вигляді GIF/скріншотів  
 - `assets/` — локальні копії сторонніх бібліотек (basicLightbox, flatpickr, SimpleLightbox, iziToast, css-loader)
 
-## Запуск локально
-1. Клонування:
-   ```bash
-   git clone https://github.com/MatrosovDmytro/zpi-zp41_appRECORD-MatrosovDmytro-MEU-2025.git
+
