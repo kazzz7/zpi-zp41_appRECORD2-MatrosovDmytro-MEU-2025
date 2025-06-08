@@ -10,9 +10,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izitoast/dist/css/iziToast.min.css"/>
 </head>
 <body>
-  <!-- Report Header -->
-  <!-- Report Header -->
-<header class="report-header container">
+  <!-- REPORT HEADER -->
+  <header class="report-header container">
     <div class="report-title">
       <h1>Звіт з лабораторних робіт</h1>
       <h2>з дисципліни "Основи клієнтської розробки"</h2>
@@ -22,18 +21,8 @@
       <img src="images/photo.jpg" alt="Матросов Дмитро"/>
     </div>
   </header>
-  
-  <!-- Lab Navigation -->
-  <nav class="lab-nav container">
-    <ul>
-      <li><a href="lr4.html">Лабораторна робота 4</a></li>
-      <li><a href="lr5.html">Лабораторна робота 5</a></li>
-      <li><a href="lr6.html" class="active">Лабораторна робота 6</a></li>
-    </ul>
-  </nav>
-  
 
-  <!-- Lab Navigation -->
+  <!-- TOP NAVIGATION -->
   <nav class="lab-nav container">
     <ul>
       <li><a href="lr4.html">Лабораторна робота 4</a></li>
@@ -42,7 +31,7 @@
     </ul>
   </nav>
 
-  <!-- Sidebar & Content Panes -->
+  <!-- SIDEBAR + CONTENT -->
   <div class="report-content container">
     <aside class="sidebar">
       <button class="nav-btn active" data-section="theme">
@@ -54,130 +43,95 @@
     </aside>
 
     <section class="main-section">
-      <!-- Theme / Meta / Links -->
       <article id="theme" class="content-pane active">
         <h3>ТЕМА:</h3>
         <p>АСИНХРОННІСТЬ. ПРОМІСИ. HTTP-ЗАПИТИ. REST API. AJAX. КРОС-ДОМЕННІ ЗАПИТИ.</p>
-
         <h3>МЕТА:</h3>
-        <p>Придбати практичні навички роботи зі створення промісів, методів then(), catch(), finally();  
-        ланцюжків промісів; роботи з протоколами HTTP/HTTPS, REST API та Fetch API для AJAX-запитів до публічного API сервісу.</p>
-
+        <p>Придбати навички роботи з промісами, Fetch API та AJAX для взаємодії з публічними REST API.</p>
         <h3>ПОСИЛАННЯ:</h3>
         <ul>
-          <li><a href="https://github.com/kazzz7/zpi-zp41_appRECORD2-MatrosovDmytro-MEU-2025">
-            Репозиторій звітного HTML-документа
-          </a></li>
-          <li><a href="https://kazzz7.github.io/zpi-zp41_appRECORD2-MatrosovDmytro-MEU-2025/">
-            Жива сторінка звітного HTML-документа
-          </a></li>
+          <li><a href="https://github.com/kazzz7/zpi-zp41_appRECORD2-MatrosovDmytro-MEU-2025">Репозиторій звітного HTML-документа</a></li>
+          <li><a href="https://kazzz7.github.io/zpi-zp41_appRECORD2-MatrosovDmytro-MEU-2025/">Жива сторінка звітного HTML-документа</a></li>
         </ul>
       </article>
 
-      <!-- Task 1 -->
       <article id="task1" class="content-pane">
         <h3>ЗАВДАННЯ №1: Таймер зворотного відліку</h3>
         <ul>
           <li>Підключені бібліотеки flatpickr та iziToast</li>
-          <li>При першому завантаженні сторінки кнопка Start неактивна</li>
-          <li>При кліку на інпут відкривається календар для вибору дати</li>
-          <li>Якщо обрана дата з минулого, з’являється повідомлення “Please choose a date in the future” та Start залишається неактивною</li>
-          <li>При обранні дати з майбутнього кнопка Start стає активною</li>
-          <li>Після натискання Start інпут і кнопка блокуються, на сторінці відображається зворотний відлік у форматі xx:xx:xx:xx, таймер оновлюється щосекунди і зупиняється при досягненні нуля</li>
+          <li>Start неактивна до вибору майбутньої дати</li>
+          <li>Вибір дати з минулого — повідомлення “Please choose a date in the future”</li>
+          <li>Після вибору майбутньої дати — Start активується</li>
+          <li>При натисканні Start — інпут і кнопка блокуються, починається відлік у форматі xx:xx:xx:xx</li>
         </ul>
+        <h3>Реалізація</h3>
+        <input id="datetime-picker" type="text" placeholder="Виберіть дату"/>
+        <button data-start>Start</button>
+        <div class="timer">
+          <div class="field"><span class="value" data-days>00</span><span class="label">Days</span></div>
+          <div class="field"><span class="value" data-hours>00</span><span class="label">Hours</span></div>
+          <div class="field"><span class="value" data-minutes>00</span><span class="label">Minutes</span></div>
+          <div class="field"><span class="value" data-seconds>00</span><span class="label">Seconds</span></div>
+        </div>
+        <h3>Демонстрація</h3>
+        <img src="images/lr6-countdown-demo.jpg" alt="Countdown Demo"/>
       </article>
 
-      <!-- Task 2 -->
       <article id="task2" class="content-pane">
         <h3>ЗАВДАННЯ №2: Генератор промісів</h3>
         <ul>
-          <li>Розмітка форми з полем delay (ms), двома радіокнопками state=fulfilled/rejected та кнопкою Submit</li>
+          <li>Форма з полем delay (ms) та state = fulfilled/rejected</li>
           <li>Після сабміту створюється проміс із заданою затримкою</li>
-          <li>У залежності від обраного state показується iziToast-сповіщення з повідомленням про успіх або відмову та зазначеним delay</li>
+          <li>Результат — iziToast-сповіщення про fulfilled або rejected</li>
         </ul>
+        <h3>Реалізація</h3>
+        <form class="promise-form">
+          <label>Delay (ms)<input type="number" name="delay" required/></label>
+          <fieldset>
+            <legend>State</legend>
+            <label><input type="radio" name="state" value="fulfilled" required/> Fulfilled</label>
+            <label><input type="radio" name="state" value="rejected" required/> Rejected</label>
+          </fieldset>
+          <button type="submit">Create notification</button>
+        </form>
+        <h3>Демонстрація</h3>
+        <img src="images/lr6-promise-demo.gif" alt="Promise Demo"/>
       </article>
 
-      <!-- Task 3 -->
       <article id="task3" class="content-pane">
         <h3>ЗАВДАННЯ №3: Пошук зображень по Pixabay API</h3>
         <ul>
-          <li>Форма з полем query для пошуку та кнопкою Search</li>
-          <li>Запит до Pixabay з вашим API-ключем, параметрами image_type=photo, orientation=horizontal, per_page=12, safesearch=true</li>
-          <li>При отриманні результатів галерея рендериться динамічно, перед кожним новим пошуком старі елементи очищаються</li>
-          <li>Для перегляду збільшених зображень використано SimpleLightbox із викликом refresh() після оновлення</li>
-          <li>В разі помилки або порожнього результату показується iziToast-повідомлення</li>
+          <li>Форма з полем query і кнопкою Search</li>
+          <li>Запит через Fetch до Pixabay (image_type=photo, orientation=horizontal, per_page=12)</li>
+          <li>Галерея рендериться динамічно, перед новим пошуком старі очищаються</li>
+          <li>SimpleLightbox + iziToast для помилок / сповіщень</li>
         </ul>
+        <h3>Реалізація</h3>
+        <form class="search-form">
+          <input type="text" name="query" placeholder="Пошуковий запит…" required/>
+          <button type="submit">Search</button>
+        </form>
+        <div class="gallery"></div>
+        <h3>Демонстрація</h3>
+        <img src="images/lr6-pixabay-demo.gif" alt="Pixabay Demo"/>
       </article>
     </section>
   </div>
 
-  <!-- Interactive Sections -->
-  <main class="container">
-    <!-- Task 1 UI -->
-    <section>
-      <h2>Завдання 1: Таймер зворотного відліку</h2>
-      <input id="datetime-picker" type="text" placeholder="Виберіть дату"/>
-      <button type="button" data-start>Start</button>
-      <div class="timer">
-        <div class="field">
-          <span class="value" data-days>00</span><span class="label">Days</span>
-        </div>
-        <div class="field">
-          <span class="value" data-hours>00</span><span class="label">Hours</span>
-        </div>
-        <div class="field">
-          <span class="value" data-minutes>00</span><span class="label">Minutes</span>
-        </div>
-        <div class="field">
-          <span class="value" data-seconds>00</span><span class="label">Seconds</span>
-        </div>
-      </div>
-      <img src="images/lr6-countdown-demo.gif" alt="Countdown Demo"/>
-    </section>
-
-    <!-- Task 2 UI -->
-    <section>
-      <h2>Завдання 2: Генератор промісів</h2>
-      <form class="promise-form">
-        <label>Delay (ms)<input type="number" name="delay" required/></label>
-        <fieldset>
-          <legend>State</legend>
-          <label><input type="radio" name="state" value="fulfilled" required/> Fulfilled</label>
-          <label><input type="radio" name="state" value="rejected" required/> Rejected</label>
-        </fieldset>
-        <button type="submit">Create notification</button>
-      </form>
-      <img src="images/lr6-promise-demo.gif" alt="Promise Demo"/>
-    </section>
-
-    <!-- Task 3 UI -->
-    <section>
-      <h2>Завдання 3: Пошук зображень по Pixabay API</h2>
-      <form class="search-form">
-        <input type="text" name="query" placeholder="Пошуковий запит…" required/>
-        <button type="submit">Search</button>
-      </form>
-      <div class="gallery"></div>
-      <img src="images/lr6-pixabay-demo.gif" alt="Pixabay Demo"/>
-    </section>
-  </main>
-
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
       <p>© 2025 Матросов Дмитро (ZPI-ZP41) — Основи програмування</p>
     </div>
   </footer>
 
-  <!-- Libraries & Scripts -->
+  <!-- LIBRARIES & SCRIPTS -->
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="https://cdn.jsdelivr.net/npm/simplelightbox/dist/simple-lightbox.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/izitoast/dist/js/iziToast.min.js"></script>
   <script src="js/lr6/countdown.js"></script>
   <script src="js/lr6/promiseGenerator.js"></script>
   <script src="js/lr6/pixabaySearch.js"></script>
-
-  <!-- Panel Toggle Script -->
   <script>
     const btns = document.querySelectorAll('.nav-btn');
     const panes = document.querySelectorAll('.content-pane');

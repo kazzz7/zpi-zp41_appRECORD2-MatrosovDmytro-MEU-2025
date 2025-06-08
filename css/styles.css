@@ -1,4 +1,4 @@
-/* Базові скидання */
+/* === RESET & BASE === */
 * {
   margin: 0;
   padding: 0;
@@ -6,12 +6,12 @@
 }
 body {
   font-family: Arial, sans-serif;
-  line-height: 1.6;
+  line-height: 1.5;
   background: #f9f9f9;
   color: #333;
 }
 
-/* Контейнер */
+/* === CONTAINERS === */
 .container {
   width: 90%;
   max-width: 900px;
@@ -19,46 +19,115 @@ body {
   padding: 1rem 0;
 }
 
-/* Хедер */
-.site-header {
-  background: #004a99;
-  color: #fff;
+/* === REPORT HEADER === */
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 1rem 0;
+  border-bottom: 1px solid #ccc;
+  background: #fff;
 }
-.site-header h1 {
+.report-title h1 {
   font-size: 1.8rem;
+  margin-bottom: 0.25rem;
 }
-.main-nav ul {
+.report-title h2 {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 0.25rem;
+}
+.report-title p {
+  font-size: 0.9rem;
+}
+.report-photo img {
+  width: 100px;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+/* === LAB NAVIGATION (TOP) === */
+.lab-nav {
+  background: #fff;
+}
+.lab-nav ul {
   list-style: none;
   display: flex;
   gap: 1rem;
+  padding: 1rem 0;
+  justify-content: center;
 }
-.main-nav a {
-  color: #fff;
+.lab-nav a {
   text-decoration: none;
-  font-weight: bold;
+  padding: 0.5rem 1.2rem;
+  border: 2px solid #8a2be2;
+  border-radius: 20px;
+  color: #8a2be2;
+  font-weight: 500;
+  transition: background 0.2s;
 }
-.main-nav a:hover {
-  text-decoration: underline;
-}
-
-/* Основний контент */
-.intro h2 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-.intro p {
-  margin-bottom: 1rem;
-}
-.intro ul {
-  margin-left: 1.5rem;
-  margin-bottom: 1rem;
-}
-.intro li {
-  margin-bottom: 0.5rem;
+.lab-nav a:hover,
+.lab-nav a.active {
+  background: #e0d4f7;
 }
 
-/* Футер */
+/* === REPORT CONTENT (SIDEBAR + MAIN) === */
+.report-content {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  background: #fff;
+  padding: 1rem;
+  border: 2px dashed #8a2be2;
+  border-radius: 8px;
+}
+.sidebar {
+  flex: 0 0 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.nav-btn {
+  background: #fff;
+  border: 2px solid #8a2be2;
+  border-radius: 20px;
+  color: #8a2be2;
+  padding: 0.75rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.nav-btn.active,
+.nav-btn:hover {
+  background: #e0d4f7;
+}
+
+/* === MAIN SECTION PANES === */
+.main-section {
+  flex: 1;
+}
+.content-pane {
+  display: none;
+}
+.content-pane.active {
+  display: block;
+}
+.main-section h3 {
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+.main-section p,
+.main-section ul {
+  margin-bottom: 1rem;
+}
+.main-section ul {
+  margin-left: 1.2rem;
+  list-style: disc;
+}
+
+/* === FOOTER === */
 .site-footer {
   background: #222;
   color: #aaa;

@@ -5,13 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ЛР 5 | Основи програмування | Матросов Дмитро</title>
   <link rel="stylesheet" href="css/styles.css"/>
-  <!-- basicLightbox CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.css"/>
 </head>
 <body>
-  <!-- Report Header -->
- <!-- Report Header -->
-<header class="report-header container">
+  <!-- REPORT HEADER -->
+  <header class="report-header container">
     <div class="report-title">
       <h1>Звіт з лабораторних робіт</h1>
       <h2>з дисципліни "Основи клієнтської розробки"</h2>
@@ -21,18 +19,8 @@
       <img src="images/photo.jpg" alt="Матросов Дмитро"/>
     </div>
   </header>
-  
-  <!-- Lab Navigation -->
-  <nav class="lab-nav container">
-    <ul>
-      <li><a href="lr4.html">Лабораторна робота 4</a></li>
-      <li><a href="lr5.html">Лабораторна робота 5</a></li>
-      <li><a href="lr6.html" class="active">Лабораторна робота 6</a></li>
-    </ul>
-  </nav>
-  
 
-  <!-- Lab Navigation -->
+  <!-- TOP NAVIGATION -->
   <nav class="lab-nav container">
     <ul>
       <li><a href="lr4.html">Лабораторна робота 4</a></li>
@@ -41,85 +29,67 @@
     </ul>
   </nav>
 
-  <!-- Sidebar & Content Panes -->
+  <!-- SIDEBAR + CONTENT -->
   <div class="report-content container">
     <aside class="sidebar">
       <button class="nav-btn active" data-section="theme">
         Тема. Мета. Місце розташування сайту та звіту
       </button>
-      <button class="nav-btn" data-section="tasks">Завдання</button>
+      <button class="nav-btn" data-section="tasks">
+        Завдання
+      </button>
     </aside>
 
     <section class="main-section">
-      <!-- Theme / Meta / Links -->
       <article id="theme" class="content-pane active">
         <h3>ТЕМА:</h3>
         <p>WEB-СХОВИЩЕ. Web Storage API. МОДАЛЬНЕ ВІКНО</p>
-
         <h3>МЕТА:</h3>
         <p>Отримати навички створення динамічної галереї та форми збереження стану через Web Storage API.</p>
-
         <h3>ПОСИЛАННЯ:</h3>
         <ul>
-          <li><a href="https://github.com/kazzz7/zpi-zp41_appRECORD2-MatrosovDmytro-MEU-2025">
-            Репозиторій звітного HTML-документа
-          </a></li>
-          <li><a href="https://kazzz7.github.io/zpi-zp41_appRECORD2-MatrosovDmytro-MEU-2025/">
-            Жива сторінка звітного HTML-документа
-          </a></li>
+          <li><a href="https://github.com/kazzz7/zpi-zp41_appRECORD2-MatrosovDmytro-MEU-2025">Репозиторій звітного HTML-документа</a></li>
+          <li><a href="https://kazzz7.github.io/zpi-zp41_appRECORD2-MatrosovDmytro-MEU-2025/">Жива сторінка звітного HTML-документа</a></li>
         </ul>
       </article>
 
-      <!-- Task Description -->
       <article id="tasks" class="content-pane">
         <h3>ЗАВДАННЯ:</h3>
         <p>Створити галерею зображень із модальним вікном (basicLightbox) та форму зворотного зв’язку з Web Storage API.</p>
+
+        <h3>Реалізація галереї</h3>
+        <ul class="gallery"></ul>
+
+        <h3>Реалізація форми</h3>
+        <form class="feedback-form" autocomplete="off">
+          <label>
+            Email
+            <input type="email" name="email" required/>
+          </label>
+          <label>
+            Повідомлення
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+          <button type="submit">Submit</button>
+        </form>
+
+        <h3>Демонстрація</h3>
+        <img src="images/lr5-gallery-demo.gif" alt="Gallery Demo"/>
+        <img src="images/lr5-form-demo.gif" alt="Form Demo"/>
       </article>
     </section>
   </div>
 
-  <!-- Реалізація -->
-  <main class="container">
-    <section>
-      <h2>Галерея з basicLightbox</h2>
-      <ul class="gallery"></ul>
-    </section>
-
-    <section>
-      <h2>Форма зворотного зв’язку</h2>
-      <form class="feedback-form" autocomplete="off">
-        <label>
-          Email
-          <input type="email" name="email" required/>
-        </label>
-        <label>
-          Повідомлення
-          <textarea name="message" rows="5" required></textarea>
-        </label>
-        <button type="submit">Submit</button>
-      </form>
-    </section>
-
-    <section>
-      <h2>Демонстрація</h2>
-      <img src="images/lr5-gallery-demo.gif" alt="Gallery Demo"/>
-      <img src="images/lr5-form-demo.gif" alt="Form Demo"/>
-    </section>
-  </main>
-
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
       <p>© 2025 Матросов Дмитро (ZPI-ZP41) — Основи програмування</p>
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <!-- basicLightbox JS -->
+  <!-- SCRIPTS -->
   <script src="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.js"></script>
-  <!-- Your gallery & form script -->
   <script src="js/lr5.js"></script>
-  <!-- Panel toggle script -->
   <script>
     const btns = document.querySelectorAll('.nav-btn');
     const panes = document.querySelectorAll('.content-pane');
